@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Base from "../layouts/Base.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -11,9 +12,11 @@ import Base from "../layouts/Base.astro";
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <title>Offres</title>
     </head>
-    <body>
+    <body class="bg-fuchsia-50">
         <Base titre="Offres">
-            <h1>Offres</h1>
+            <h1 class="flex justify-center text-3xl py-3 font-semibold">
+                Offres
+            </h1>
         </Base>
     </body>
 </html>
