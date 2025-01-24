@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import Base from "../layouts/Base.astro";
 import Footer from "../components/Footer.astro";
+import Card from "../components/Card.astro";
 
 const offres = [
     {
@@ -57,7 +58,8 @@ const offres = [
                 <ul>
                     {
                         offres.map((offres) => (
-                            <li key={offres.id}>{offres.nomMaison}</li>
+                           // <li>{offres.nomMaison}</li>//
+                           <Card {...offres} />
                         ))
                     }
                 </ul>
