@@ -30,5 +30,12 @@ const { nomMaison, adresse, prix, surface, nbChambres, nbSdb, favori, imgUrl } =
         <p class="text-black">
             <strong>Nombre de salles de bain : </strong>{nbSdb} salles de bain
         </p>
+        {
+            favori ? (
+                <p class="text-red-500 font-bold">♥ Favori</p>
+            ) : (
+                <p class="text-red-500 font-bold">♡ Non Favori</p>
+            )
+        }
     </div>
 </div>
