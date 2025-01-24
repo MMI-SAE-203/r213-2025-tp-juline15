@@ -14,13 +14,11 @@ const { nomMaison, adresse, prix, surface, nbChambres, nbSdb, favori, imgUrl } =
     Astro.props;
 ---
 
-<div
-    class="flex justify-center items-center rounded-lg overflow-hidden pb-6"
->
+<div class="flex justify-center items-center rounded-lg overflow-hidden pb-6">
     <div
         class="p-6 flex flex-col bg-white rounded-lg shadow-lg overflow-hidden max-w-sm"
     >
-        <h3 class="font-semibold text-lg">{nomMaison}</h3>
+        <h3 class="font-semibold text-2xl text-purple-900">{nomMaison}</h3>
         <p class="text-black"><strong>Adresse : </strong>{adresse}</p>
         <p class="text-black"><strong>Prix : </strong>{prix} €</p>
         <p class="text-black"><strong>Surface : </strong>{surface} m²</p>

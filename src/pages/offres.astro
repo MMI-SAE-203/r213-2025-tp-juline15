@@ -54,15 +54,28 @@ const offres = [
             <h1 class="flex justify-center text-3xl py-3 font-semibold">
                 Offres
             </h1>
-            <div>
-                <ul>
-                    {
-                        offres.map((offres) => (
-                           // <li>{offres.nomMaison}</li>//
-                           <Card {...offres} />
-                        ))
-                    }
-                </ul>
+            <div x-data="{ showFavorites: false }" class="p-4">
+                <button
+                    @click="showFavorites = !showFavorites"
+                    class="bg-fuchsia-900 text-white px-4 py-2 rounded shadow hover:bg-fuchsia-900"
+                >
+                    <span x-show="!showFavorites">Afficher les favoris</span>
+                    <span x-show="showFavorites">Afficher tout</span>
+                </button>
+
+                <div
+                    x-show="!showFavorites"
+                    class="flex flex-wrap justify-center mt-4"
+                >
+                    {offres.map((offre) => <Card {...offre} />)}
+                </div>
+
+                <div
+                    x-show="showFavorites"
+                    class="flex flex-wrap justify-center mt-4"
+                >
+                    {offres.map((offre) => offre.favori && <Card {...offre} />)}
+                </div>
             </div>
         </Base>
     </body>
