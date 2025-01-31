@@ -9,7 +9,7 @@ export async function getOffres() {
         });
         data = data.map((collection) => {
             collection.img = pb.files.getURL(collection, collection.images);
-            return data;
+            return collection;
         });
         return data;
     } catch (error) {
