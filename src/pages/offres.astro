@@ -9,7 +9,7 @@ const offres = await getOffres();
 
 <Base titre="Offres">
     <h1 class="flex justify-center text-5xl py-3 font-semibold">Offres</h1>
-    <div x-data="{ showFavorites: false }" class="p-4">
+    <div x-data="{ showFavorites: false, showList: false }" class="p-4">
         <button
             @click="showFavorites = !showFavorites"
             class="bg-fuchsia-900 text-white px-4 py-2 rounded shadow hover:bg-fuchsia-900"
@@ -18,7 +18,19 @@ const offres = await getOffres();
             <span x-show="showFavorites">Afficher tout</span>
         </button>
 
-        <div x-show="!showFavorites" class="flex flex-wrap justify-center mt-4">
+        <button
+            @click="showList = !showList"
+            class="bg-pink-800 text-white px-4 py-2 rounded shadow hover:bg-pink-800"
+        >
+            <span x-show="!showList">Afficher sous forme de liste</span>
+            <span x-show="showList">Afficher sous forme de grille</span>
+        </button>
+
+        <div
+            class="viewMode==='grid'? 'Afficher sous forme de grille' : 'Afficher sous forme de liste"
+            x-show="!showFavorites"
+            class="flex flex-wrap justify-center mt-4"
+        >
             {offres.map((offre) => <Card {...offre} />)}
         </div>
 
