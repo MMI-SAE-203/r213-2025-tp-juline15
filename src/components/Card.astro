@@ -15,11 +15,12 @@ console.log(offre);
         <h3 class="font-semibold text-2xl text-purple-900">
             {offre.nomMaison}
         </h3>
+        <a href={`/offres/${offre.id}`}>Voir plus</a>
         {
             offre.favori ? (
-                <p class="text-red-500 font-bold">♥ Favori</p>
+                <button class="text-red-500 font-bold">♥ Favori</button>
             ) : (
-                <p class="text-red-500 font-bold">♡ Non Favori</p>
+                <buton class="text-red-500 font-bold">♡ Non Favori</buton>
             )
         }
     </div>
