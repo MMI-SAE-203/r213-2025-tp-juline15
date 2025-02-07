@@ -25,7 +25,9 @@ const offres = await getOffres();
             <span x-show="!showList">Afficher sous forme de liste</span>
             <span x-show="showList">Afficher sous forme de grille</span>
         </button>
-
+        <a href="/offres/surface/80"
+            >Maisons avec une supérficie supérieure à 80 m²</a
+        >
         <div
             class="viewMode==='grid'? 'Afficher sous forme de grille' : 'Afficher sous forme de liste"
             x-show="!showFavorites"
