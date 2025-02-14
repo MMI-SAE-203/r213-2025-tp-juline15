@@ -20,13 +20,17 @@ const offres = await getOffres();
 
         <button
             @click="showList = !showList"
-            class="bg-pink-800 text-white px-4 py-2 rounded shadow hover:bg-pink-800"
+            class="bg-pink-800 text-white px-4 py-2 rounded shadow hover:bg-pink-800 mx-4"
         >
             <span x-show="!showList">Afficher sous forme de liste</span>
             <span x-show="showList">Afficher sous forme de grille</span>
         </button>
         <a href="/offres/surface/80"
             >Maisons avec une supérficie supérieure à 80 m²</a
+        >
+        <a
+            class="bg-purple-400 text-white px-4 py-2 rounded shadow hover:bg-purple-400 mx-4"
+            href="/offres/add">Ajouter une offre</a
         >
         <div
             class="viewMode==='grid'? 'Afficher sous forme de grille' : 'Afficher sous forme de liste"
