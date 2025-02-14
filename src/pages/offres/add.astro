@@ -9,19 +9,52 @@ if (Astro.request.method === "POST") {
 }
 ---
 
-<h1 class="text-lg">Ajouter une offre</h1>
+<h1 class="my-8 mx-6 font-bold text-2xl text-purple-400">Ajouter une offre</h1>
 <form action="/offres/add" method="POST" enctype="multipart/form-data">
     <input
         type="text"
         name="nomMaison"
         placeholder="Nom de la maison"
         required
-        class="w-full mt-2 p-2 border border-gray-300 rounded-md"
+        class="w-full mt-2 p-2 border border-gray-300 rounded-md m-6 max-w-80"
     />
-    <input type="number" name="prix" placeholder="Prix" />
-    <input type="number" name="nbSdb" placeholder="Nombre de salles de bain" />
-    <input type="number" name="nbChambres" placeholder="Nombre de chambres" />
-    <input type="number" name="surface" placeholder="Superficie" />
-    <input type="file" name="image" />
-    <button type="submit">Ajouter</button>
+    <br />
+    <input
+        class="w-full mt-2 p-2 border border-gray-300 rounded-md m-6 max-w-80"
+        type="number"
+        name="prix"
+        placeholder="Prix"
+    />
+    <br />
+    <input
+        class="w-full mt-2 p-2 border border-gray-300 rounded-md m-6 max-w-80"
+        type="number"
+        name="nbSdb"
+        placeholder="Nombre de salles de bain"
+    />
+    <br />
+    <input
+        class="w-full mt-2 p-2 border border-gray-300 rounded-md m-6 max-w-80"
+        type="number"
+        name="nbChambres"
+        placeholder="Nombre de chambres"
+    />
+    <br />
+    <input
+        class="w-full mt-2 p-2 border border-gray-300 rounded-md m-6 max-w-80"
+        type="number"
+        name="surface"
+        placeholder="Superficie"
+    />
+    <br />
+    <input
+        class="w-full mt-2 p-2 border border-gray-300 rounded-md m-6 max-w-80"
+        type="file"
+        name="image"
+    />
+    <br />
+    <button
+        class="bg-purple-400 text-white px-4 py-2 rounded shadow hover:bg-purple-400 mx-6"
+        type="submit">Ajouter</button
+    >
 </form>
