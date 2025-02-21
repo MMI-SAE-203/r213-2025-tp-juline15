@@ -1,0 +1,21 @@
+---
+import { getAgent, getOneAgent } from "../../backend.mjs";
+import Base from "../../layouts/Base.astro";
+import Card from "../../components/Card.astro";
+
+const { id } = Astro.params;
+const agent = await getOneAgent(id);
+if (!agent) {
+    return Astro.redirect("/agent");
+}
+---
+
+<Base>
+    <div
+        class="viewMode==='grid'? 'Afficher sous forme de grille' : 'Afficher sous forme de liste"
+        x-show="!showFavorites"
+        class="flex flex-wrap justify-center mt-4"
+    >
+        {agent.map((agent) => <Card {...agent} />)}
+    </div>
+</Base>

@@ -75,3 +75,26 @@ export async function filterByPrix(prixMin, prixMax) {
         return [];
     }
 }
+
+export async function getAgent() {
+    try {
+        let data = await pb.collection('agent').getFullList();
+        return data;
+    } catch (error) {
+        console.log('Une erreur est survenue en lisant la liste des agents', error);
+        return [];
+    }
+}
+
+export async function getOneAgent(id) {
+    try {
+        const sortedRecordsAgent = await pb.collection('maison').getFullList({
+            filter: `agent.id = '${id}' `,
+            expand: 'agent',
+        });
+        return sortedRecordsAgent;
+    } catch (error) {
+        console.log('Une erreur est survenue en lisant la maison', error);
+        return null;
+    }
+}

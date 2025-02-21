@@ -1,0 +1,23 @@
+---
+import Base from "../../layouts/Base.astro";
+import Card from "../../components/Card.astro";
+
+import { getAgent } from "../../backend.mjs";
+
+const agent = await getAgent();
+---
+
+<Base title="Agents">
+    <h1 class="flex justify-center text-5xl py-3 font-semibold">Agents</h1>
+    <ul class="mt-4">
+        {
+            agent?.map((agent) => (
+                <li>
+                    <a href={`/agent/${agent.id}`}>
+                        {agent.Prenom} {agent.Nom}
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+</Base>
