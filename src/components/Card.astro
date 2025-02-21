@@ -3,7 +3,10 @@ const { ...offre } = Astro.props;
 console.log(offre);
 ---
 
-<div class="grid grid-colls-2 justify-center items-center rounded-lg pb-6 px-6">
+<div
+    class="grid grid-colls-2 justify-center items-center rounded-lg pb-6 px-6"
+    x-data={`{favori: ${offre.favori}, clickFavori() {this.favori = !this.favori; setFavori(${JSON.stringify(offre)});}}`}
+>
     <div class="p-6 flex flex-col bg-white rounded-lg shadow-lg">
         <img
             src={offre.img}
@@ -18,10 +21,20 @@ console.log(offre);
         <a href={`/offres/${offre.id}`}>Voir plus</a>
         {
             offre.favori ? (
-                <p class="text-red-500 font-bold">♥ Favori</p>
+                <button @click="clickFavori()" class="text-red-500 font-bold">
+                    ♥ Favori
+                </button>
             ) : (
-                <p class="text-red-500 font-bold">♡ Non Favori</p>
+                <button @click="clickFavori()" class="text-red-500 font-bold">
+                    ♡ Non Favori
+                </button>
             )
         }
     </div>
 </div>
+
+<script>
+    //@ts-nocheck
+    import { setFavori } from "../backend.mjs";
+    window.setFavori = setFavori;
+</script>

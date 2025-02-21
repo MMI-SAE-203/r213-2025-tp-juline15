@@ -98,3 +98,7 @@ export async function getOneAgent(id) {
         return null;
     }
 }
+
+export async function setFavori(house) {
+    await pb.collection('maison').update(house.id, { favori: !house.favori });
+}
